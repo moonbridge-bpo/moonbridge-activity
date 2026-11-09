@@ -1,0 +1,16 @@
+# Local build and dependency outputs
+**/node_modules/
+**/dist/
+**/target/
+**/.preview/
+**/data/
+**/src-tauri/gen/
+*.log
+
+# Local-only planning and recording materials
+chat-context/
+diagrams/
+documents/
+mockups/
+poc/
+presentation/
