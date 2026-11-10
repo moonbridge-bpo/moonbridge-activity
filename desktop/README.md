@@ -15,6 +15,8 @@ The app asks for a server origin on first launch. Enter a staging HTTPS origin w
 
 The application title, Windows metadata, publisher, installer name, favicon, tray icon, and window header use MoonBridge branding. The window uses the MoonBridge logo and its navy, blue, and gold palette.
 
+The NSIS installer also uses the MoonBridge icon and branded header/sidebar artwork from `src-tauri/nsis/`. Regenerate those bitmap assets on Windows with `powershell -ExecutionPolicy Bypass -File scripts/generate-installer-art.ps1` after changing the logo.
+
 An installed app registers `moonbridge://open`. The web app may use that link for an **Open desktop app** button; the link only opens the window and carries no credentials.
 
 ## Expected server contract

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211a6e">
+  <meta name="description" content="MoonBridge Activity for Windows: a desktop companion for timecard-linked input activity. Download the team test release.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta property="og:title" content="MoonBridge Activity for Windows">
+  <meta property="og:description" content="Pair a Windows desktop to an open MoonBridge shift and review activity coverage.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="./assets/moonbridge-icon.png" type="image/png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>MoonBridge Activity for Windows</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./" aria-label="MoonBridge Activity home">
+        <span class="brand-mark"><img src="./assets/moonbridge-logo.png" alt="" width="42" height="32"></span>
+        <span class="brand-name">MOONBRIDGE <span>ACTIVITY</span></span>
+      </a>
+      <a class="header-link" href="https://github.com/moonbridge-bpo/moonbridge-activity/releases/tag/v0.1.0">Release notes <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-5-5 5 5-5 5"/></svg></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="release-label"><span class="release-dot"></span> Windows test release <span class="release-separator"></span> v0.1.0</div>
+        <h1 id="hero-title">Activity belongs to the <em>right shift.</em></h1>
+        <p class="hero-lead">MoonBridge Activity links a Windows computer to an approved web timecard. It records input activity intervals, keeps them through connection loss, and makes coverage clear in the report.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://github.com/moonbridge-bpo/moonbridge-activity/releases/download/v0.1.0/MoonBridge-Activity_0.1.0_x64-setup.exe">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 17v3h16v-3"/></svg>
+            Download for Windows
+          </a>
+          <a class="button button-secondary" href="https://github.com/moonbridge-bpo/moonbridge-activity/releases/tag/v0.1.0">View release details <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-5-5 5 5-5 5"/></svg></a>
+        </div>
+        <p class="access-note">Windows 10/11 x64 · GitHub access required · Installer is unsigned</p>
+      </div>
+
+      <div class="preview-wrap" aria-label="MoonBridge Activity interface preview">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="app-preview">
+          <div class="window-bar"><span class="window-mini-logo">mb</span><span>MoonBridge Activity</span><div class="window-controls" aria-hidden="true"><i></i><i></i><i></i></div></div>
+          <div class="preview-brand"><span class="preview-logo"><img src="./assets/moonbridge-logo.png" alt="" width="37" height="28"></span><span>MOONBRIDGE</span><small>Activity</small></div>
+          <div class="preview-body">
+            <div class="preview-status"><span class="green-dot"></span> Current shift <span class="preview-device">This PC · connected</span></div>
+            <div class="preview-heading">Active</div>
+            <p>Keyboard or mouse input was detected within the idle threshold.</p>
+            <div class="input-gap"><small>CURRENT INPUT GAP</small><strong>21 sec</strong><span>Idle after five minutes without input</span></div>
+            <div class="preview-details"><div><small>Worker</small><strong>Paired worker</strong></div><div><small>Waiting to sync</small><strong>0 intervals</strong></div></div>
+            <div class="preview-handoff">Change worker</div>
+            <p class="preview-privacy">Only activity intervals are collected.</p>
+          </div>
+        </div>
+        <span class="preview-caption">Interface preview</span>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Privacy and reliability">
+      <div class="wrap trust-inner"><span><i></i> Input intervals only</span><span><i></i> No screenshots or typed text</span><span><i></i> Offline queue and retry</span><span><i></i> Clear shared-PC handoff</span></div>
+    </section>
+
+    <section class="workflow wrap" aria-labelledby="workflow-title">
+      <div class="section-lead"><h2 id="workflow-title">One clear activity record.</h2><p>The web timecard establishes the worker. The Windows companion supplies the input intervals.</p></div>
+      <div class="workflow-list">
+        <div class="workflow-row"><span class="step-num">01</span><div><h3>Clock in on MoonBridge</h3><p>Start a shift in the web app before connecting a computer.</p></div><span class="step-line" aria-hidden="true"></span></div>
+        <div class="workflow-row"><span class="step-num">02</span><div><h3>Approve this computer</h3><p>Enter the one-time code from the Windows app in your open timecard.</p></div><span class="step-line" aria-hidden="true"></span></div>
+        <div class="workflow-row"><span class="step-num">03</span><div><h3>Review coverage</h3><p>See active, idle, break, and unverified time as separate parts of the shift.</p></div><span class="step-line" aria-hidden="true"></span></div>
+      </div>
+    </section>
+
+    <section class="release-section" aria-labelledby="release-title"><div class="wrap release-inner"><div><h2 id="release-title">Built for MoonBridge team evaluation.</h2><p>This is an early Windows release. It needs a MoonBridge server address supplied by an administrator. Production web integration and code signing are still in progress.</p></div><a class="release-cta" href="https://github.com/moonbridge-bpo/moonbridge-activity/releases/tag/v0.1.0">Open v0.1.0 release <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-5-5 5 5-5 5"/></svg></a></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-inner"><span>© MoonBridge · Activity for Windows</span><a href="https://github.com/moonbridge-bpo/moonbridge-activity">Source repository</a></div></footer>
+</body>
+</html>
