@@ -13,7 +13,7 @@ The test web app is for local validation. Production web authentication, site pe
 ## Download
 
 - [MoonBridge Activity download page](https://moonbridge-bpo.github.io/moonbridge-activity-downloads/)
-- [Windows v0.1.0 team test release](https://github.com/moonbridge-bpo/moonbridge-activity/releases/tag/v0.1.0)
+- [Windows v0.1.1 team test release](https://github.com/moonbridge-bpo/moonbridge-activity/releases/tag/v0.1.1)
 
 The download page is hosted in a separate public [MoonBridge repository](https://github.com/moonbridge-bpo/moonbridge-activity-downloads) because GitHub Pages is unavailable for this private source repository on the organization's current plan. The installer release remains private and requires GitHub access. The installer is currently unsigned.
 

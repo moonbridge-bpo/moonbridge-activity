@@ -1,6 +1,6 @@
 [package]
 name = "moonbridge-activity"
-version = "0.1.0"
+version = "0.1.1"
 description = "MoonBridge Windows activity companion"
 authors = ["MoonBridge"]
 edition = "2024"

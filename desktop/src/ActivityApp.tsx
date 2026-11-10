@@ -77,20 +77,24 @@ export default function ActivityApp() {
   const gap = state?.lastInputMs == null ? "—" :
     state.lastInputMs < 60_000 ? `${Math.floor(state.lastInputMs / 1000)} sec` :
       `${Math.floor(state.lastInputMs / 60_000)} min ${Math.floor(state.lastInputMs % 60_000 / 1000)} sec`;
+  const gapProgress = Math.min(100, Math.max(0, (state?.lastInputMs || 0) / 300_000 * 100));
   if (!state) return <main className="loading">Opening MoonBridge Activity…</main>;
   return <main className="app-shell">
     <header className="brandbar"><div className="brand">
-      <img src="/moonbridge-logo.png" alt="" /><span>MOONBRIDGE</span>
-    </div><span>Activity</span></header>
+      <span className="brand-mark"><img src="/moonbridge-logo.png" alt="" /></span>
+      <span className="brand-wordmark">MOONBRIDGE <small>ACTIVITY</small></span>
+    </div><span className="desktop-label">DESKTOP COMPANION</span></header>
     <div className="content">
-      <div className="status-line"><span className={`status-dot status-${state.phase}`} />
-        {paired ? "Current shift" : "Waiting for pairing"}
-        <span className="device">This PC · {state.deviceId.slice(0, 11)}</span>
-      </div>
-      <h1>{code ? "Approve this computer" : titles[state.phase] || "Needs attention"}</h1>
-      <p className="intro">{code
-        ? "Sign in to MoonBridge, clock in, and enter this code in the desktop pairing section."
-        : descriptions[state.phase] || descriptions.attention}</p>
+      <section className={`status-card status-card-${state.phase}`} aria-label="Activity status">
+        <div className="status-line"><span className={`status-dot status-${state.phase}`} />
+          {paired ? "CURRENT SHIFT" : "SETUP"}
+          <span className="device">This PC · {state.deviceId.slice(0, 11)}</span>
+        </div>
+        <h1>{code ? "Approve this computer" : titles[state.phase] || "Needs attention"}</h1>
+        <p className="intro">{code
+          ? "Sign in to MoonBridge, clock in, and enter this code in the desktop pairing section."
+          : descriptions[state.phase] || descriptions.attention}</p>
+      </section>
       {error && <div className="notice error" role="alert">{error}</div>}
       {state.message && <div className="notice" role="status">{state.message}</div>}
       {!paired && !code && (!state.serverUrl || editServer ? <form className="server-form"
@@ -113,6 +117,7 @@ export default function ActivityApp() {
         <button className="button primary wide" disabled={busy} onClick={() => void run(async () => {
           const result = await invoke<{code: string; expiresInSeconds: number}>("start_pairing");
           setCode({ code: result.code, expiresAt: Date.now() + result.expiresInSeconds * 1000 });
+          setRemaining(result.expiresInSeconds);
         })}>Generate pairing code</button>
         <button className="text-button" onClick={() => setEditServer(true)}>Change server</button>
       </>)}
@@ -127,6 +132,7 @@ export default function ActivityApp() {
         <section className={`activity-panel panel-${state.phase}`}>
           <span className="field-label">Current input gap</span>
           <strong className="input-time">{gap}</strong>
+          <div className="gap-meter" aria-hidden="true"><span style={{ width: `${gapProgress}%` }} /></div>
           <span>Idle after five minutes without keyboard or mouse input</span>
         </section>
         <dl className="details">
